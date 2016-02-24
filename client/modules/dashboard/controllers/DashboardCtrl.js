@@ -10,7 +10,7 @@ define(['modules/dashboard/module'], function (module) {
                                                          return $moment(data).format('DD/MM/YYYY HH:mm');
                                                        else
                                                          return null;
-                                                     }}]});
+                                                  }}]});
 
     $('.dataTables_filter input').attr('type', 'text');
 
