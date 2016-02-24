@@ -1,6 +1,6 @@
-# Full Stack Javascript
+# Glukose
 
-A Full Stack Lazy Modular Javascript Architecture
+A Web solution to parse and mange the measures captured by glukose-service
 
 ![glukose port](https://cloud.githubusercontent.com/assets/1216181/13285138/542ea170-daf9-11e5-8c40-ab966a3ba8c3.png)
 
@@ -13,7 +13,8 @@ A Full Stack Lazy Modular Javascript Architecture
 # Backend Techonologies:
 
 - [Loopback](https://strongloop.com/): LoopBack is a highly-extensible, open-source Node.js framework. Compare with other frameworks. Quickly create dynamic end-to-end REST APIs
-
+- [MomentJs](http://momentjs.com/): Parse, validate, manipulate, and display dates in JavaScript.
+- 
 # Frontend Techonologies:
 
 - [RequireJS](http://requirejs.org/): RequireJS is a JavaScript file and module loader.
@@ -26,6 +27,8 @@ A Full Stack Lazy Modular Javascript Architecture
 - [Angular Bootstrap](https://angular-ui.github.io/bootstrap/): Bootstrap components written in pure AngularJS by the AngularUI Team.
 - [Bootstrap](http://getbootstrap.com/): Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
 - [DarkVelvet](http://pixelkit.com/): Free UI Kits built on Bootstrap for any developer that wants to build a cool looking and functional website.
+- [MomentJs](http://momentjs.com/): Parse, validate, manipulate, and display dates in JavaScript.
+- [Datatable](https://datatables.net/): DataTables is a plug-in for the jQuery Javascript library.
 
 # Installation:
 
@@ -36,4 +39,12 @@ Execute npm to install node packages:
 Execute bower to install ui packages:
 ```
   bower install
+```
+Start Web
+```
+  http://localhost:2000
+```
+Start Node-Red
+```
+  http://localhost:2000/red
 ```
