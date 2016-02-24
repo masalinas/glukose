@@ -1,6 +1,6 @@
 # Glukose
 
-A Web solution to parse and mange the measures captured by glukose-service
+A Web solution to parse and manage the measures captured by glukose-service using IBM node-red tool to parse the JSON input measures.
 
 ![glukose port](https://cloud.githubusercontent.com/assets/1216181/13285138/542ea170-daf9-11e5-8c40-ab966a3ba8c3.png)
 
