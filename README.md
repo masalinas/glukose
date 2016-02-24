@@ -14,7 +14,7 @@ A Web solution to parse and mange the measures captured by glukose-service
 
 - [Loopback](https://strongloop.com/): LoopBack is a highly-extensible, open-source Node.js framework. Compare with other frameworks. Quickly create dynamic end-to-end REST APIs
 - [MomentJs](http://momentjs.com/): Parse, validate, manipulate, and display dates in JavaScript.
-- 
+
 # Frontend Techonologies:
 
 - [RequireJS](http://requirejs.org/): RequireJS is a JavaScript file and module loader.
