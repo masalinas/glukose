@@ -2,6 +2,8 @@
 
 A Full Stack Lazy Modular Javascript Architecture
 
+![glukose port](https://cloud.githubusercontent.com/assets/1216181/13285138/542ea170-daf9-11e5-8c40-ab966a3ba8c3.png)
+
 # Infraestructure Techonologies:
 
 - [NodeJS](https://nodejs.org/): Event-driven I/O server-side JavaScript environment based on V8. Includes API documentation, change-log, examples and announcements.
