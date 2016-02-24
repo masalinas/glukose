@@ -1,0 +1,35 @@
+{
+  "name": "Client",
+  "description": "A client model",
+  "plural": "Clients",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "comments": "Client name"
+    },
+    "address": {
+      "type": "string",
+      "comments": "Client address"
+    },
+    "vat": {
+      "type": "string",
+      "required": true,
+      "comments": "Client vat"
+    },
+    "active": {
+      "type": "boolean",
+      "required": true,
+      "comments": "Client status"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Product",
+  "description": "A product model",
+  "plural": "Products",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "comments": "Product code"
+    },
+    "description": {
+      "type": "string",
+      "comments": "Product description"
+    },
+    "price": {
+      "type": "number",
+      "required": true,
+      "comments": "Product consumption"
+    },
+    "active": {
+      "type": "boolean",
+      "required": true,
+      "comments": "Product status"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,13 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "fullstackjs": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "glukometer",
+    "name": "glukometer",
+    "connector": "mongodb"
+  }
+}

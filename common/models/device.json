@@ -1,0 +1,42 @@
+{
+  "name": "Device",
+  "description": "A device model",
+  "plural": "Devices",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "serlnum": {
+      "type": "String",
+      "required": true,
+      "comments": "Device Serial Number code"
+    },
+    "ptname": {
+      "type": "String",
+      "required": true,
+      "comments": "Device patient name"
+    },
+    "ptid": {
+      "type": "String",
+      "required": true,
+      "comments": "Device patient id"
+    },
+    "date": {
+      "type": "Date",
+      "required": true,
+      "comments": "Device measure date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "measures": {
+      "type": "hasMany",
+      "model": "Measure",
+      "foreignKey": "deviceId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

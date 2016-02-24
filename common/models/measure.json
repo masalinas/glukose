@@ -1,0 +1,26 @@
+{
+  "name": "Measure",
+  "description": "A measure model",
+  "plural": "Measures",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "Date",
+      "required": true,
+      "comments": "Measure date"
+    },
+    "value": {
+      "type": "Number",
+      "required": true,
+      "comments": "Measure value"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
