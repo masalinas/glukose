@@ -4,6 +4,10 @@ A Web solution to parse and manage the measures captured by glukose-service usin
 
 ![capture_glukose_01](https://cloud.githubusercontent.com/assets/1216181/13285544/78ec2d82-dafb-11e5-859a-20d9731192e3.png)
 
+The Node-red flow measure parser
+
+![capture_glukose_02](https://cloud.githubusercontent.com/assets/1216181/13285545/78ecceb8-dafb-11e5-8044-b4c04623b7f4.png)
+
 # Infraestructure Techonologies:
 
 - [NodeJS](https://nodejs.org/): Event-driven I/O server-side JavaScript environment based on V8. Includes API documentation, change-log, examples and announcements.
