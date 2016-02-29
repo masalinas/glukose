@@ -4,15 +4,33 @@ define(['modules/dashboard/module'], function (module) {
   module.registerController('DashboardCtrl', ['$scope', '$log', '$moment', 'Device', function ($scope, $log, $moment, Device) {
     $(".view").css("min-height", $(window).height() - $('.header').height() - 100);
 
-    $('#datatable-measures').DataTable({columns: [{ "targets": 'measure.value', "title": "Value", "data": 'value', "type": "number"},
+    $('#datatable-measures').DataTable({columns: [{ "targets": 'measure.value', "title": "Value mg/dL", "data": 'value', "type": "number"},
                                                   { "targets": 'measure.date', "title": "Date", "data": 'date', "type": "date", "render": function ( data, type, full, meta ) {
                                                        if (data != undefined && data != null)
                                                          return $moment(data).format('DD/MM/YYYY HH:mm');
                                                        else
                                                          return null;
-                                                  }}]});
+                                                  }}],
+                                        fnRowCallback: function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+                                                            if ( aData.value < "60" ) {
+                                                              $('td', nRow).css('background-color', '#E91632');
+                                                            }
+                                                            else if ( aData.value > "120" ) {
+                                                              $('td', nRow).css('background-color', '#E91632');
+                                                            }
+                                        }});
 
-    $('.dataTables_filter input').attr('type', 'text');
+    $scope.$parent.onDeviceChange = function(device) {
+      // inject the datasource to datatable
+      $('table').dataTable().fnClearTable();
+      $('table').dataTable().fnAddData(device.measures);
+
+      //if ($scope.device.measures.length > 0) {
+      //  var oTT =  $('table').dataTable().fnGetInstance( 'datatable-measures' );
+
+      //oTT.fnSelect($('table tbody tr')[0]);
+      //}
+    }
 
     function getMeasures() {
       Device.getMeasures()
@@ -21,20 +39,23 @@ define(['modules/dashboard/module'], function (module) {
           $('table').dataTable().fnClearTable();
 
           if (value !== undefined) {
-            $scope.device = JSON.parse(angular.toJson(value))
+            var devices = JSON.parse(angular.toJson(value))
 
             // set head dashboard
-            $scope.$parent.ptname = $scope.device.ptname;
-            $scope.$parent.serlnum = $scope.device.serlnum;
+            $scope.$parent.devices = devices;
 
-            // inject the datasource to datatable
-            $('table').dataTable().fnAddData($scope.device.measures);
+            if (devices.length > 0) {
+              $scope.$parent.device = devices[0];
 
-            //if ($scope.device.measures.length > 0) {
-            //  var oTT =  $('table').dataTable().fnGetInstance( 'datatable-measures' );
+              // inject the datasource to datatable
+              $('table').dataTable().fnAddData(devices[0].measures);
 
-            //oTT.fnSelect($('table tbody tr')[0]);
-            //}
+              //if ($scope.device.measures.length > 0) {
+              //  var oTT =  $('table').dataTable().fnGetInstance( 'datatable-measures' );
+
+              //oTT.fnSelect($('table tbody tr')[0]);
+              //}
+            }
           }
         }, function(httpResponse) {
           var error = httpResponse.data.error;

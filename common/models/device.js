@@ -3,11 +3,10 @@ var app = require('../../server/server');
 module.exports = function (Device) {
   // find a customer by id
   Device.getMeasures = function(cb) {
-    Device.findOne({where: {serlnum: app.settings.device},
-                    include: {relation: 'measures'}}, function (err, measures) {
-      if(err) cb(err);
+    Device.find({include: {relation: 'measures', scope: {where: {value: {gt: 0}}}}}, function (err, devices) {
+        if(err) cb(err);
 
-      cb(null, measures);
+        cb(null, devices);
     });
   };
 
@@ -15,7 +14,7 @@ module.exports = function (Device) {
     'getMeasures',
     {
       description : "Get device measures",
-      returns: {arg: 'measures', type: 'object', root: true},
+      returns: {arg: 'result', type: 'array', root: true},
       http: {verb: 'get', path: '/measures'}
     }
   );

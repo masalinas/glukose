@@ -75,3 +75,15 @@ table.dataTable thead .sorting_asc:after {
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: #fff !important;
 }
+
+.device-selector {
+  background: linear-gradient(rgb(222, 144, 73) 0%, rgb(205, 108, 54) 7%, rgb(191, 81, 32) 94%, rgb(201, 97, 40) 100%);
+  border: 1px solid #171d21;
+  border-radius: 5px;
+  height: 39px;
+  color: #000;
+}
+
+.dataTable td {
+  color: #000;
+}
