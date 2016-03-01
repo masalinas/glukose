@@ -59,3 +59,5 @@ Start Node-Red
 ```
   http://localhost:2000/red
 ```
+# Licenses
+The source code is released under Apache 2.0.
