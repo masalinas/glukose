@@ -20,6 +20,9 @@ define(['modules/dashboard/module'], function (module) {
                                                             }
                                         }});
 
+    // set textbox filter style
+    $('.dataTables_filter input').attr('type', 'text');
+
     $scope.$parent.onDeviceChange = function(device) {
       // inject the datasource to datatable
       $('table').dataTable().fnClearTable();
