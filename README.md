@@ -24,8 +24,10 @@ The Node-red flow measure parser
 - [RequireJS](http://requirejs.org/): RequireJS is a JavaScript file and module loader.
 - [Require DomReady](https://github.com/requirejs/domReady): An AMD loader plugin for detecting DOM ready.
 - [JQuery](https://jquery.com): jQuery: The Write Less, Do More, JavaScript Library.
+- [JQuery UI](https://jqueryui.com/): jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.
 - [Angular](https://angularjs.org): AngularJS is what HTML would have been, had it been designed for building web-apps.
 - [Angular Couch Potato](https://github.com/laurelnaiad/angular-couch-potato): Lazy-Load and Register Components in AngularJS Applications.
+- [Angular Resource](https://github.com/angular/bower-angular-resource): A factory which creates a resource object that lets you interact with RESTful server-side data sources.
 - [Angular UI Router](https://github.com/angular-ui/ui-router): The de-facto solution to flexible routing with nested views in AngularJS.
 - [Angular Animate](https://angularjs.org): AngularJS provides animation hooks for common directives.
 - [Angular Bootstrap](https://angular-ui.github.io/bootstrap/): Bootstrap components written in pure AngularJS by the AngularUI Team.
