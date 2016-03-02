@@ -18,7 +18,7 @@ The Node-red flow measure parser
 # Backend Techonologies:
 
 - [Loopback](https://strongloop.com/): LoopBack is a highly-extensible, open-source Node.js framework. Compare with other frameworks. Quickly create dynamic end-to-end REST APIs.
-- [socket.io](http://socket.io/): Featuring the fastest and most reliable real-time engine. 
+- [socket.io](http://socket.io/): Socket.IO enables real-time bidirectional event-based communication.
 - [MomentJs](http://momentjs.com/): Parse, validate, manipulate, and display dates in JavaScript.
 
 # Frontend Techonologies:
@@ -35,7 +35,7 @@ The Node-red flow measure parser
 - [Angular Bootstrap](https://angular-ui.github.io/bootstrap/): Bootstrap components written in pure AngularJS by the AngularUI Team.
 - [angular-socket-io](https://github.com/btford/angular-socket-io): Socket.IO component for AngularJS.
 - [angular-toastr](https://github.com/Foxandxss/angular-toastr):Angular port of CodeSeven/toastr.
-- [socket.io](http://socket.io/): Featuring the fastest and most reliable real-time engine.  
+- [socket.io](http://socket.io/): Socket.IO enables real-time bidirectional event-based communication.
 - [Bootstrap](http://getbootstrap.com/): Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.
 - [DarkVelvet](http://pixelkit.com/): Free UI Kits built on Bootstrap for any developer that wants to build a cool looking and functional website.
 - [MomentJs](http://momentjs.com/): Parse, validate, manipulate, and display dates in JavaScript.
