@@ -1,12 +1,14 @@
 define(['angular',
         'angular-couch-potato',
-        'angular-ui-router'], function(ng, couchPotato){
+        'angular-ui-router',
+        'angular-socket-io',
+        'angular-toastr'], function(ng, couchPotato){
 
-  var module = angular.module('app.modules.layout', ['ui.router']);
+  var module = angular.module('app.modules.layout', ['ui.router', 'btford.socket-io', 'toastr']);
 
   couchPotato.configureApp(module);
 
-  module.config(function($stateProvider, $couchPotatoProvider, $urlRouterProvider) {
+  module.config(function($provide, $stateProvider, $couchPotatoProvider, $urlRouterProvider) {
     $stateProvider
       .state('app', {
         url: '/app',
@@ -26,11 +28,15 @@ define(['angular',
         }
       });
 
+    $provide.factory('Socket', function (socketFactory) {
+      return socketFactory();
+    });
+
     // load the default layout
     $urlRouterProvider.otherwise('/app');
   });
 
-  module.run(function($couchPotato, $rootScope, $state, $stateParams){
+  module.run(function($couchPotato, $rootScope, $state, $stateParams) {
     module.lazy = $couchPotato
   });
 

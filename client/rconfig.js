@@ -14,6 +14,8 @@ var require = {
     'jquery-datatables': './bower_components/datatables/media/js/jquery.dataTables.min',
     'momentjs': './bower_components/moment/min/moment-with-locales.min',
     'angular-momentjs': './bower_components/angular-momentjs/angular-momentjs.min',
+    'angular-toastr': './bower_components/angular-toastr/dist/angular-toastr.tpls.min',
+    'angular-socket-io': './bower_components/angular-socket-io/socket.min',
 
     // app modules included
     'modules-includes': 'includes',
@@ -36,6 +38,8 @@ var require = {
     'jquery-datatables': { deps: ['jquery'] },
     'momentjs': {deps: ['jquery']},
     'angular-momentjs': {deps: ['momentjs']},
+    'angular-toastr': {deps: ['angular']},
+    'angular-socket-io': {deps: ['angular']},
 
     // app modules included
     'modules-includes': { deps: ['angular']},

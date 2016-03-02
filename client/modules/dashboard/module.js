@@ -2,9 +2,11 @@ define(['angular',
         'angular-couch-potato',
         'angular-ui-router',
         'services',
-        'angular-momentjs'], function(ng, couchPotato){
+        'angular-momentjs',
+        'angular-socket-io',
+        'angular-toastr'], function(ng, couchPotato){
 
-  var module = angular.module('app.modules.dashboard', ['ui.router', 'lbServices', 'angular-momentjs']);
+  var module = angular.module('app.modules.dashboard', ['ui.router', 'lbServices', 'angular-momentjs', 'btford.socket-io', 'toastr']);
 
   couchPotato.configureApp(module);
 

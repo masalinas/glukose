@@ -23,7 +23,6 @@ define([
   couchPotato.configureApp(app);
 
   app.config(function ($provide, $httpProvider) {
-
   });
 
   app.run(function ($couchPotato, $rootScope, $state, $stateParams) {

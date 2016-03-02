@@ -16,7 +16,8 @@
     "moment": "^2.11.2",
     "node-red": "^0.13.2",
     "node-red-contrib-mongodb2": "^0.3.0",
-    "serve-favicon": "^2.0.1"
+    "serve-favicon": "^2.0.1",
+    "socket.io": "^1.4.4"
   },
   "devDependencies": {
     "jshint": "^2.5.6"

@@ -26,6 +26,22 @@ boot(app, __dirname, function(err) {
   if (require.main === module) {
     var server = app.start();
 
+    // configure socket.io namespaces
+    app.io = require('socket.io')(server);
+    app.io.on('connection', function(socket){
+      console.log('a user connected');
+
+      socket.on('events', function(event) {
+        console.log('Event from server at ' + new Date());
+
+        app.io.emit('events', event);
+      });
+
+      socket.on('disconnect', function(){
+        console.log('user disconnected');
+      });
+    });
+
     // Create the settings object - see default settings.js file for other options
     var settings = {
       // By default, the Node-RED UI is available at http://localhost:1880/

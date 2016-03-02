@@ -1,7 +1,7 @@
 define(['modules/dashboard/module'], function (module) {
   "use strict";
 
-  module.registerController('DashboardCtrl', ['$scope', '$log', '$moment', 'Device', function ($scope, $log, $moment, Device) {
+  module.registerController('DashboardCtrl', ['$scope', '$log', '$moment', 'Socket', 'toastr', 'Device', function ($scope, $log, $moment, Socket, toastr, Device) {
     $(".view").css("min-height", $(window).height() - $('.header').height() - 100);
 
     $('#datatable-measures').DataTable({columns: [{ "targets": 'measure.value', "title": "Value mg/dL", "data": 'value', "type": "number"},
@@ -22,6 +22,11 @@ define(['modules/dashboard/module'], function (module) {
 
     // set textbox filter style
     $('.dataTables_filter input').attr('type', 'text');
+
+    // get push event: measure
+    Socket.on('events', function(ptname) {
+      getMeasures();
+    })
 
     $scope.$parent.onDeviceChange = function(device) {
       // inject the datasource to datatable
