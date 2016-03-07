@@ -24,7 +24,7 @@
 
 <p>A light web solution to parse and manage the measures captured by glukose-service using IBM node-red tool to parse the JSON input measures.</p>
 
-<p><img src="https://cloud.githubusercontent.com/assets/1216181/13285544/78ec2d82-dafb-11e5-859a-20d9731192e3.png" alt="capture_glukose_01"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1216181/13421902/9000ee1e-df91-11e5-9011-d8d80994b479.png" alt="glukose_2"></p>
 
 <p>The Node-red flow measure parser</p>
 
@@ -40,6 +40,8 @@
 <a href="http://expressjs.com">ExpressJS</a>: Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</li>
 <li>
 <a href="https://www.mongodb.org/">MongoDb</a>:MongoDB is the next-generation database that lets you create applications never before possible.</li>
+<li>
+<a href="http://nodered.org/">Node-Red</a>: A visual tool for wiring the Internet of Things.</li>
 </ul>
 
 <h1>
@@ -47,7 +49,9 @@
 
 <ul>
 <li>
-<a href="https://strongloop.com/">Loopback</a>: LoopBack is a highly-extensible, open-source Node.js framework. Compare with other frameworks. Quickly create dynamic end-to-end REST APIs</li>
+<a href="https://strongloop.com/">Loopback</a>: LoopBack is a highly-extensible, open-source Node.js framework. Compare with other frameworks. Quickly create dynamic end-to-end REST APIs.</li>
+<li>
+<a href="http://socket.io/">socket.io</a>: Socket.IO enables real-time bidirectional event-based communication.</li>
 <li>
 <a href="http://momentjs.com/">MomentJs</a>: Parse, validate, manipulate, and display dates in JavaScript.</li>
 </ul>
@@ -63,15 +67,25 @@
 <li>
 <a href="https://jquery.com">JQuery</a>: jQuery: The Write Less, Do More, JavaScript Library.</li>
 <li>
+<a href="https://jqueryui.com/">JQuery UI</a>: jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.</li>
+<li>
 <a href="https://angularjs.org">Angular</a>: AngularJS is what HTML would have been, had it been designed for building web-apps.</li>
 <li>
 <a href="https://github.com/laurelnaiad/angular-couch-potato">Angular Couch Potato</a>: Lazy-Load and Register Components in AngularJS Applications.</li>
+<li>
+<a href="https://github.com/angular/bower-angular-resource">Angular Resource</a>: A factory which creates a resource object that lets you interact with RESTful server-side data sources.</li>
 <li>
 <a href="https://github.com/angular-ui/ui-router">Angular UI Router</a>: The de-facto solution to flexible routing with nested views in AngularJS.</li>
 <li>
 <a href="https://angularjs.org">Angular Animate</a>: AngularJS provides animation hooks for common directives.</li>
 <li>
 <a href="https://angular-ui.github.io/bootstrap/">Angular Bootstrap</a>: Bootstrap components written in pure AngularJS by the AngularUI Team.</li>
+<li>
+<a href="https://github.com/btford/angular-socket-io">angular-socket-io</a>: Socket.IO component for AngularJS.</li>
+<li>
+<a href="https://github.com/Foxandxss/angular-toastr">angular-toastr</a>:Angular port of CodeSeven/toastr.</li>
+<li>
+<a href="http://socket.io/">socket.io</a>: Socket.IO enables real-time bidirectional event-based communication.</li>
 <li>
 <a href="http://getbootstrap.com/">Bootstrap</a>: Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</li>
 <li>
@@ -85,11 +99,6 @@
 <h1>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation:</h1>
 
-<p>Copy and import this flow from node-red import clipboard:</p>
-
-<pre><code>[{"id":"cab4e39d.354b2","type":"watch","z":"640e548a.9bf1ac","name":"in-box","files":"/home/miguel/test/glukometer/export/","x":72,"y":62,"wires":[["7811681b.87ee98"]]},{"id":"209f559c.df60aa","type":"function","z":"640e548a.9bf1ac","name":"historic 01","func":"console.log('Start historic 01 node');\n\nvar fs = context.global.fs;\n\nif (fs === undefined)\n    node.error(\"fs module is not accessible\", msg);\n\n// move sensor file to historic folder\nfs.rename('/home/miguel/test/glukometer/export/' + msg.file, '/home/miguel/test/glukometer/export/.historic/' + msg.file, function (err) {\n    if (err) node.error(\"Historic error\", msg);\n    \n    node.log('Historic complete');\n    \n    node.send(msg);\n});\n\nreturn;","outputs":1,"noerr":0,"x":640,"y":62,"wires":[["75ab55bd.8a54ac"]]},{"id":"75ab55bd.8a54ac","type":"debug","z":"640e548a.9bf1ac","name":"out debug","active":true,"console":"false","complete":"payload","x":856,"y":62,"wires":[]},{"id":"be3aad0.f41c55","type":"catch","z":"640e548a.9bf1ac","name":"","scope":null,"x":192,"y":224,"wires":[["96d23fad.692dc"]]},{"id":"96d23fad.692dc","type":"function","z":"640e548a.9bf1ac","name":"historic 02","func":"console.log('Start historic 02 node');\n\nvar fs = context.global.fs;\n\nif (fs === undefined)\n    node.error(\"fs module is not accessible\", msg);\n\nif (msg.file === undefined)\n    return msg;\n    \n// move sensor file to historic folder\nfs.rename('/home/miguel/test/glukometer/export/' + msg.file, '/home/miguel/test/glukometer/export/.historic/' + msg.file, function (err) {\n    if (err) node.error(\"Historic error\", msg);\n\n    node.log('Historic complete');\n    \n    node.send(msg);\n});\n\nreturn;","outputs":1,"noerr":0,"x":393,"y":224,"wires":[["66e2ce50.991d3"]]},{"id":"66e2ce50.991d3","type":"debug","z":"640e548a.9bf1ac","name":"error","active":true,"console":"false","complete":"payload","x":612,"y":224,"wires":[]},{"id":"7811681b.87ee98","type":"function","z":"640e548a.9bf1ac","name":"parse","func":"console.log('Start parse node');\n\nvar fs = context.global.fs;\nvar moment = context.global.moment;\n\nif (fs === undefined)\n    node.error(\"fs module is not accessible\", msg);\n\n// preveent when remove files. The watch fire with a none file\nif (msg.type == 'none')   \n    return;\n        \n// recover sensor file from folder\nfs.readFile('/home/miguel/test/glukometer/export/' + msg.file, function(err, data) {\n    if (err) \n        node.error(\"Reading file error\", msg);\n\n    // convert from string to JSON\n    msg.payload = JSON.parse(data);\n\n    node.send(msg);\n});\n\nreturn;","outputs":1,"noerr":0,"x":254,"y":62,"wires":[["3a803a3d.c57fc6"]]},{"id":"3a803a3d.c57fc6","type":"function","z":"640e548a.9bf1ac","name":"persist","func":"console.log('Start persist node');\n\nvar loopback = context.global.loopback;\nvar Device = loopback.models.Device;\n\n// recover measure\nvar mes = msg.payload;\n\n// create or update the device measure\nDevice.findOne({\"serlnum\" : mes.serlnum, \n                \"ptname\" : mes.ptname,\n                \"ptid\" : mes.ptid},  function(err, device) {\n        if (err) node.error(\"findOne device error\", msg);\n\n        if (device === null) {\n            device = {\"serlnum\" : mes.serlnum,\n                      \"ptname\" : mes.ptname,\n                      \"ptid\" : mes.ptid,\n                      \"date\": mes.date};\n        }\n        else\n            device.date = mes.date;\n            \n        Device.upsert(device, function(err, device) {\n            if (err) node.error(\"upsert device error\", msg);\n        \n            // insert all measures from device\n            device.measures.create(mes.measures, function (err, device) {\n                if (err) node.error(\"create measures error\", msg);\n\n                // persist all the new measures\n                /*mes.measures.forEach(function(measure) {\n                    console.log('Measure: ' + measure.value);\n                    \n                });*/\n                \n                msg.payload = device;\n                \n                node.send(msg);\n            });\n        });           \n    });\n    \n\nreturn;","outputs":1,"noerr":0,"x":432,"y":62,"wires":[["209f559c.df60aa"]]}]
-</code></pre>
-
 <p>Execute npm to install node packages:</p>
 
 <pre><code>  npm install
@@ -100,15 +109,30 @@
 <pre><code>  bower install
 </code></pre>
 
-<p>Start Web</p>
+<p>Access Web Glukose</p>
 
 <pre><code>  http://localhost:2000
 </code></pre>
 
-<p>Start Node-Red</p>
+<p>Access Web Glukose JSON API Back-end</p>
+
+<pre><code>  http://localhost:2000/export
+</code></pre>
+
+<p>Access Node-Red Web designer</p>
 
 <pre><code>  http://localhost:2000/red
 </code></pre>
+
+<p>Copy and import this flow from node-red import clipboard</p>
+
+<pre><code>[{"id":"ec5acfb2.13a53","type":"watch","z":"f54faa1e.0ab058","name":"in-box","files":"/opt/glukose/export/","x":70,"y":60,"wires":[["3e6ad746.c19528"]]},{"id":"c87faff8.37805","type":"function","z":"f54faa1e.0ab058","name":"historic 01","func":"console.log('Start historic 01 node');\n\nvar fs = context.global.fs;\n\nif (fs === undefined)\n    node.error(\"fs module is not accessible\", msg);\n\n// move sensor file to historic folder\nfs.rename('/opt/glukose/export/' + msg.file, '/opt/glukose/export/.historic/' + msg.file, function (err) {\n    if (err) node.error(\"Historic error\", msg);\n    \n    node.log('Historic complete');\n    \n    node.send(msg);\n});\n\nreturn;","outputs":1,"noerr":0,"x":638,"y":60,"wires":[["730521e1.8cfae"]]},{"id":"730521e1.8cfae","type":"debug","z":"f54faa1e.0ab058","name":"out debug","active":true,"console":"false","complete":"payload","x":854,"y":60,"wires":[]},{"id":"2fccd88d.d03328","type":"catch","z":"f54faa1e.0ab058","name":"","scope":null,"x":190,"y":222,"wires":[["d05e34f1.2fa1c8"]]},{"id":"d05e34f1.2fa1c8","type":"function","z":"f54faa1e.0ab058","name":"historic 02","func":"console.log('Start historic 02 node');\n\nvar fs = context.global.fs;\n\nif (fs === undefined)\n    node.error(\"fs module is not accessible\", msg);\n\nif (msg.file === undefined)\n    return msg;\n    \n// move sensor file to historic folder\nfs.rename('/opt/glukose/export/' + msg.file, '/opt/glukose/export/.historic/' + msg.file, function (err) {\n    if (err) node.error(\"Historic error\", msg);\n\n    node.log('Historic complete');\n    \n    node.send(msg);\n});\n\nreturn;","outputs":1,"noerr":0,"x":391,"y":222,"wires":[["12f1c101.ed0e3f"]]},{"id":"12f1c101.ed0e3f","type":"debug","z":"f54faa1e.0ab058","name":"error","active":true,"console":"false","complete":"payload","x":610,"y":222,"wires":[]},{"id":"3e6ad746.c19528","type":"function","z":"f54faa1e.0ab058","name":"parse","func":"console.log('Start parse node');\n\nvar fs = context.global.fs;\nvar moment = context.global.moment;\n\nif (fs === undefined)\n    node.error(\"fs module is not accessible\", msg);\n\n// preveent when remove files. The watch fire with a none file\nif (msg.type == 'none')   \n    return;\n        \n// recover sensor file from folder\nfs.readFile('/opt/glukose/export/' + msg.file, function(err, data) {\n    if (err) \n        node.error(\"Reading file error\", msg);\n\n    // convert from string to JSON\n    msg.payload = JSON.parse(data);\n\n    node.send(msg);\n});\n\nreturn;","outputs":1,"noerr":0,"x":252,"y":60,"wires":[["11721895.ee8de7"]]},{"id":"11721895.ee8de7","type":"function","z":"f54faa1e.0ab058","name":"persist","func":"console.log('Start persist node');\n\nvar loopback = context.global.loopback;\nvar Device = loopback.models.Device;\n\n// recover measure\nvar mes = msg.payload;\n\n// create or update the device measure\nDevice.findOne({\"serlnum\" : mes.serlnum, \n                \"ptname\" : mes.ptname,\n                \"ptid\" : mes.ptid},  function(err, device) {\n        if (err) node.error(\"findOne device error\", msg);\n\n        if (device === null) {\n            device = {\"serlnum\" : mes.serlnum,\n                      \"ptname\" : mes.ptname,\n                      \"ptid\" : mes.ptid,\n                      \"date\": mes.date};\n        }\n        else\n            device.date = mes.date;\n            \n        Device.upsert(device, function(err, device) {\n            if (err) node.error(\"upsert device error\", msg);\n        \n            // insert all measures from device\n            device.measures.create(mes.measures, function (err, device) {\n                if (err) node.error(\"create measures error\", msg);\n\n                // persist all the new measures\n                /*mes.measures.forEach(function(measure) {\n                    console.log('Measure: ' + measure.value);\n                    \n                });*/\n                \n                msg.payload = device;\n                \n                node.send(msg);\n            });\n        });           \n    });\n    \n\nreturn;","outputs":1,"noerr":0,"x":430,"y":60,"wires":[["c87faff8.37805"]]}]
+</code></pre>
+
+<h1>
+<a id="licenses" class="anchor" href="#licenses" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licenses</h1>
+
+<p>The source code is released under Apache 2.0.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/masalinas/glukose">Glukose</a> is maintained by <a href="https://github.com/masalinas">masalinas</a>.</span>
