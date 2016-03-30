@@ -1,4 +1,4 @@
-# Glukose Gateway
+# Glukose
 
 A light web solution to parse and manage the measures captured by glukose-service using IBM node-red tool to parse the JSON input measures.
 
