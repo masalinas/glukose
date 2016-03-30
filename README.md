@@ -2,7 +2,7 @@
 
 A light SaaS solution to parse and manage the measures captured by Glukose Service using IBM node-RED tool to parse the JSON input measures and IBM MQTT protocol to comunicate with the Glukose Cloud SaaS.
 
-![glukose_2](https://cloud.githubusercontent.com/assets/1216181/13421902/9000ee1e-df91-11e5-9011-d8d80994b479.png)
+![glukose_gateway_app](https://cloud.githubusercontent.com/assets/1216181/14147087/6862711e-f69a-11e5-9e9f-05efadedca9e.png)
 
 The Node-RED flow Designer
 
