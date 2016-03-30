@@ -3,11 +3,11 @@
     "name": "db",
     "connector": "memory"
   },
-  "fullstackjs": {
+  "glukosedb": {
     "host": "localhost",
     "port": 27017,
-    "database": "glukometer",
-    "name": "glukometer",
+    "database": "glukosed",
+    "name": "glukose-device",
     "connector": "mongodb"
   }
 }

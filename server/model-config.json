@@ -33,19 +33,19 @@
     "public": false
   },
   "Product": {
-    "dataSource": "fullstackjs",
+    "dataSource": "glukosedb",
     "public": true
   },
   "Client": {
-    "dataSource": "fullstackjs",
+    "dataSource": "glukosedb",
     "public": true
   },
   "Device": {
-    "dataSource": "fullstackjs",
+    "dataSource": "glukosedb",
     "public": true
   },
   "Measure": {
-    "dataSource": "fullstackjs",
+    "dataSource": "glukosedb",
     "public": true
   }
 }
