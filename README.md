@@ -1,10 +1,10 @@
 # Glukose Gateway
 
-A light SaaS solution to parse and manage the measures captured by glukose-service using IBM node-red tool to parse the JSON input measures.
+A light SaaS solution to parse and manage the measures captured by Glukose Service using IBM node-RED tool to parse the JSON input measures and IBM MQTT protocol to comunicate with the Glukose Cloud SaaS.
 
 ![glukose_2](https://cloud.githubusercontent.com/assets/1216181/13421902/9000ee1e-df91-11e5-9011-d8d80994b479.png)
 
-The Node-red flow measure parser
+The Node-RED flow Designer
 
 ![glukose-gateway-nodered](https://cloud.githubusercontent.com/assets/1216181/14145560/9d61d428-f694-11e5-8bb4-f975103a27ba.png)
 
